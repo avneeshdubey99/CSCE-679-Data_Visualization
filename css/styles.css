@@ -1,0 +1,163 @@
+/**
+ * styles.css
+ *
+ * Presentation for both levels. Colours that carry meaning (cell fills,
+ * line series) are set from config.js in JavaScript; everything purely
+ * cosmetic lives here.
+ */
+
+:root {
+  --text-primary: #1f2933;
+  --text-secondary: #52606d;
+  --axis-line: #9aa5b1;
+  --page-background: #ffffff;
+  --control-border: #cbd2d9;
+  --control-background: #f5f7fa;
+  --control-active-background: #1f2933;
+  --control-active-text: #ffffff;
+  --tooltip-background: #ffffff;
+  --tooltip-border: #cbd2d9;
+}
+
+body {
+  margin: 0;
+  padding: 24px 32px 48px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--text-primary);
+  background: var(--page-background);
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.page-nav {
+  margin: 0 0 20px;
+  font-size: 14px;
+}
+
+.page-nav a {
+  color: var(--text-secondary);
+}
+
+/* ---------- Measure toggle (Level 1) ---------- */
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.controls-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.measure-button {
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--control-background);
+  border: 1px solid var(--control-border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.measure-button:hover {
+  border-color: var(--axis-line);
+}
+
+/* The active measure is inverted so the current state is readable at a
+   glance rather than needing a comparison between the two buttons. */
+.measure-button.is-active {
+  color: var(--control-active-text);
+  background: var(--control-active-background);
+  border-color: var(--control-active-background);
+}
+
+/* ---------- Matrix ---------- */
+
+.matrix-cell {
+  cursor: pointer;
+  /* Transition only the stroke, so the fill change on toggling measures
+     is instant and the hover highlight is not. */
+  transition: stroke 100ms ease;
+  stroke: transparent;
+  stroke-width: 2;
+}
+
+.matrix-cell:hover {
+  stroke: var(--text-primary);
+}
+
+/* The sparkline group sits above its cell and must not swallow the hover
+   events that belong to the cell underneath. */
+.sparkline-group {
+  pointer-events: none;
+}
+
+.sparkline-path {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* ---------- Axes ---------- */
+
+.axis text {
+  font-size: 11px;
+  fill: var(--text-secondary);
+}
+
+.axis path,
+.axis line {
+  stroke: var(--axis-line);
+}
+
+/* ---------- Legend ---------- */
+
+.legend-bar {
+  stroke: var(--control-border);
+  stroke-width: 0.5;
+}
+
+.legend-axis text {
+  font-size: 11px;
+  fill: var(--text-secondary);
+}
+
+.legend-axis path,
+.legend-axis line {
+  stroke: var(--axis-line);
+}
+
+.legend-title,
+.series-legend-label {
+  font-size: 12px;
+  fill: var(--text-secondary);
+}
+
+/* ---------- Tooltip ---------- */
+
+.tooltip {
+  position: absolute;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--text-primary);
+  background: var(--tooltip-background);
+  border: 1px solid var(--tooltip-border);
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(31, 41, 51, 0.12);
+  pointer-events: none;
+  white-space: nowrap;
+}

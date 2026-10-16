@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Level 2 — Hong Kong daily temperature heatmap</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>Hong Kong daily temperature, last 10 years</h1>
+    <p class="subtitle">
+      Cell colour encodes the month's highest temperature; the lines inside
+      each cell trace the daily maximum and minimum across that month.
+    </p>
+    <p class="page-nav">
+      <a href="level1.html">&larr; Back to Level 1</a> &middot; Level 2
+    </p>
+
+    <div id="chart"></div>
+
+    <!-- d3 v7.8.5 is vendored so the page works without a network connection. -->
+    <script src="js/lib/d3.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/tooltip.js"></script>
+    <script src="js/legend.js"></script>
+    <script src="js/matrix.js"></script>
+    <script src="js/heatmap-daily.js"></script>
+  </body>
+</html>

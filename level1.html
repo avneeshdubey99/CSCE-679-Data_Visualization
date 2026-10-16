@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Level 1 — Hong Kong monthly temperature heatmap</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>Hong Kong monthly temperature, 1997–2017</h1>
+    <p class="subtitle">
+      Each cell is one month. Colour encodes that month's temperature; hover a
+      cell for its exact values.
+    </p>
+    <p class="page-nav">
+      Level 1 &middot; <a href="level2.html">Go to Level 2 &rarr;</a>
+    </p>
+
+    <div class="controls">
+      <span class="controls-label">Show:</span>
+      <button
+        class="measure-button is-active"
+        type="button"
+        data-measure="maxTemperature"
+      >
+        Maximum
+      </button>
+      <button
+        class="measure-button"
+        type="button"
+        data-measure="minTemperature"
+      >
+        Minimum
+      </button>
+    </div>
+
+    <div id="chart"></div>
+
+    <!-- d3 v7.8.5 is vendored so the page works without a network connection. -->
+    <script src="js/lib/d3.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/tooltip.js"></script>
+    <script src="js/legend.js"></script>
+    <script src="js/matrix.js"></script>
+    <script src="js/heatmap.js"></script>
+  </body>
+</html>
