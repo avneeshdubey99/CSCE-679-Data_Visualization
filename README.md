@@ -3,6 +3,10 @@
 CSCE 679 Data Visualization — Assignment 1
 Avneesh Dubey
 
+**Live demo:** <https://avneeshdubey99.github.io/CSCE-679-Data_Visualization/>
+— [Level 1](https://avneeshdubey99.github.io/CSCE-679-Data_Visualization/level1.html)
+· [Level 2](https://avneeshdubey99.github.io/CSCE-679-Data_Visualization/level2.html)
+
 Daily temperature readings for Hong Kong from 1997 to 2017, visualized as a
 year/month matrix with D3 v7.
 
